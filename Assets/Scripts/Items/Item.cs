@@ -5,17 +5,49 @@ using UnityEngine;
 
 namespace Scripts.Items
 {
-    public enum EnumItemTypes {
-        ClothingItem
+
+    public enum EnumItemTypes
+    {
+        ResourceItem,
+        ClothingItem,
+        ConsumableItem,
+        EquipableItem,
+        TrinketItem,
+        ContainerItem,
+        PlaceableItem
     }
 
-    public abstract class Item : Component
+    public enum EnumClothingItems
     {
-        protected int weight;
+        PlateBreast,
+        PlateLeggings,
+        PlateHelm,
+        PlateGloves,
+        PlateGorget
+    }
 
-        protected int value;
+    public enum EnumEquipableItems
+    {
+        Longsword
+    }
+
+    public enum EnumResourceType
+    {
+        Iron,
+        LavaRock,
+        Oak,
+        BloodOak
+    }
+
+    [System.Serializable]
+    public class Item
+    {
+        public int weight;
+
+        public int value;
 
         public GameObject renderableObject;
+        public Sprite BackPackobject;
 
         protected string description;
         public string Description { get { return description; } }
@@ -36,7 +68,9 @@ namespace Scripts.Items
     /// <summary>
     /// Used for creation of other things... wood, minerals, plants.. Have no effect on player stats.
     /// </summary>
-    public abstract class ResourceItem : Item
+    /// 
+    [System.Serializable]
+    public class ResourceItem : Item
     {
         //enum resource type
         public ResourceItem(int weight, int value, string description, EnumItemTypes name) : base(weight, value, description, name)
@@ -45,44 +79,12 @@ namespace Scripts.Items
         }
     }
 
-    public class Wood : ResourceItem
-    {
-        public Wood(int weight, int value, string description, EnumItemTypes name) : base(weight, value, description, name)
-        {
-
-        }
-    }
-
-	public enum EnumItemType
-	{
-		Resource,
-		Crafted,
-		LootOnly,
-		Cooked
-	}
-
-	public enum EnumClothingItems
-	{
-		PlateBreast,
-		PlateLeggings,
-		PlateHelm,
-		PlateGloves,
-		PlateGorget
-	}
-		
-	public enum EnumResourceType
-	{
-		Iron,
-		LavaRock,
-		Oak,
-		BloodOak
-	}
-
-
     /// <summary>
     /// These are items can be equipped onto the body. ie armour
     /// </summary>
-    public abstract class ClothingItem : Item
+    /// 
+    [System.Serializable]
+    public class ClothingItem : Item
     {
         //enum clothing type
         public ClothingItem(int weight, int value, string description, EnumItemTypes name) : base(weight, value, description, name)
@@ -90,12 +92,14 @@ namespace Scripts.Items
         }
     }
 
-    
+
     /// <summary>
     /// These items are consumable, food, potions, have effect on players stats.  
     /// Might need to refine plants to reagents.. reagents being consumable.
     /// </summary>
-    public abstract class ConsumableItem : Item
+    /// 
+    [System.Serializable]
+    public class ConsumableItem : Item
     {
         //enum consumable type
         public ConsumableItem(int weight, int value, string description, EnumItemTypes name) : base(weight, value, description, name)
@@ -107,7 +111,9 @@ namespace Scripts.Items
     /// <summary>
     /// These are items that a player would equip into their hand, IE sword, pickaxe, shovel
     /// </summary>
-    public abstract class EquipableItem : Item
+    /// 
+    [System.Serializable]
+    public class EquipableItem : Item
     {
         //enum equipable type
         public EquipableItem(int weight, int value, string description, EnumItemTypes name) : base(weight, value, description, name)
@@ -119,7 +125,9 @@ namespace Scripts.Items
     /// <summary>
     /// This would be all the different rings and necklaces and stuff
     /// </summary>
-    public abstract class TrinketItem : Item
+    /// 
+    [System.Serializable]
+    public class TrinketItem : Item
     {
         //enum trinket type
         public TrinketItem(int weight, int value, string description, EnumItemTypes name) : base(weight, value, description, name)
@@ -131,7 +139,8 @@ namespace Scripts.Items
     /// <summary>
     /// These reside in the backpack or placeable containers
     /// </summary>
-    public abstract class ContainerItem : Item
+    [System.Serializable]
+    public class ContainerItem : Item
     {
         public ContainerItem(int weight, int value, string description, EnumItemTypes name) : base(weight, value, description, name)
         {

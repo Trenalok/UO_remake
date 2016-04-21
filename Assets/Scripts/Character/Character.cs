@@ -44,21 +44,26 @@ namespace Scripts.Character
                 //blah.packLocation = new Vector2(0, 0);
                 // print("my new item is: "  + blah.item.name);
                 // Mypackpack.Items.Add(blah);
-              //  if (!MyItems.ContainsKey("BP"))
-             /*   {
-					GameObject BP = GameObject.Find("EntityManager").GetComponent<EntityManager>().CreateItem(EnumClothingItems.PlateBreast, EnumResourceType.LavaRock);
+                if (!MyItems.ContainsKey("BP"))
+               {
+					GameObject BP = GameObject.Find("EntityManager").GetComponent<EntityManager>().CreateCraftableItem(EnumClothingItems.PlateBreast, EnumResourceType.LavaRock, EnumItemTypes.ClothingItem);
                     MyItems.Add("BP", BP);
                 }
-                if (!MyItems.ContainsKey("Helm"))
+                else if (!MyItems.ContainsKey("Helm"))
                 {
-					GameObject Helm = GameObject.Find("EntityManager").GetComponent<EntityManager>().CreateItem(EnumClothingItems.PlateHelm, EnumResourceType.LavaRock);
+					GameObject Helm = GameObject.Find("EntityManager").GetComponent<EntityManager>().CreateCraftableItem(EnumClothingItems.PlateHelm, EnumResourceType.LavaRock, EnumItemTypes.ClothingItem);
                     MyItems.Add("Helm", Helm);
                 }
-                 //Mypackpack.Items.Add()
-                 //skills[EnumSkillTypes.SpellCraft].InvokeAction(gameObject, a);
-                 timeCounter = 0;
+                else if (!MyItems.ContainsKey("Longsword"))
+                {
+                    GameObject sword = GameObject.Find("EntityManager").GetComponent<EntityManager>().CreateCraftableItem(EnumEquipableItems.Longsword, EnumResourceType.LavaRock, EnumItemTypes.EquipableItem);
+                    MyItems.Add("Longsword", sword);
+                }
+                //Mypackpack.Items.Add()
+                //skills[EnumSkillTypes.SpellCraft].InvokeAction(gameObject, a);
+                timeCounter = 0;
              //   Mypackpack.PrintAllItems();
-            */}
+            }
 
             DeltaFire = Fire;
             Fire = (int)Input.GetAxis("Fire1");

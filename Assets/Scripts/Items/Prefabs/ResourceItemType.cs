@@ -5,9 +5,9 @@ using Scripts.Items;
 
 namespace Scripts.Items.Prefabs
 {
-    public class ItemPrefab : BasePrefabInterface
+    public class ResourceItemPrefab : BasePrefabInterface
     {
-        public Item blah;
+        public ResourceItem blah;
 
         // Use this for initialization
         void Start()
@@ -22,12 +22,7 @@ namespace Scripts.Items.Prefabs
         public override void constructor(object type)
         {
             setUpMaterialDictionary();
-            if ((EnumClothingItems)type == EnumClothingItems.PlateBreast)
-                blah = new Breastplate(100, 500, "this is a breastplate", EnumItemTypes.ClothingItem, gameObject);
-            if ((EnumClothingItems)type == EnumClothingItems.PlateHelm)
-            { //etc}
-                blah = new Helmet(100, 500, "this is a Helmet", EnumItemTypes.ClothingItem, gameObject);
-            }
+
             print("Bp Made!");
         }
 

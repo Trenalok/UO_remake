@@ -31,7 +31,7 @@ public class button : MonoBehaviour, IPointerClickHandler {
 		
 		//GameObject but = GameObject.Find ("Button(1)");
 		//bit.image.sprite = butt;
-		GameObject.Find("EntityManager").GetComponent<EntityManager>().CreateItem(EnumClothingItems.PlateBreast, EnumResourceType.LavaRock);
+		GameObject.Find("EntityManager").GetComponent<EntityManager>().CreateCraftableItem(EnumClothingItems.PlateBreast, EnumResourceType.LavaRock, EnumItemTypes.ClothingItem);
 	}
 
 	public void button11()
