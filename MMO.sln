@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{220E4E71-9BA0-53A7-CD21-397A47F91975}") = "MMO", "Assembly-CSharp.csproj", "{CAEB3896-DDD4-15A7-D54A-C105D91C147F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAEB3896-DDD4-15A7-D54A-C105D91C147F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAEB3896-DDD4-15A7-D54A-C105D91C147F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAEB3896-DDD4-15A7-D54A-C105D91C147F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAEB3896-DDD4-15A7-D54A-C105D91C147F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
