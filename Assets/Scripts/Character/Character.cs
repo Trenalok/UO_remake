@@ -12,7 +12,6 @@ namespace Scripts.Character
         Dictionary<EnumSkillTypes, Skill> skills;
         private Backpack Mypackpack;
         public GameObject a;
-        //THis is a test
 		//public Canvas button;
 
 
